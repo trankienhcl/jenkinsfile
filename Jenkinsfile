@@ -1,8 +1,10 @@
 pipeline{
   agent any
   stages{
-    stage("clone"){
-      git 'https://github.com/trankienhcl/jenkinsfile.git'
+    stage('clone'){
+      step{
+        git 'https://github.com/trankienhcl/jenkinsfile.git'
+      }
     }
   }
 }
