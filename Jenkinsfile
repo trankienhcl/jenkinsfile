@@ -20,11 +20,9 @@ pipeline{
                 deploy adapters: [tomcat9(credentialsId: '4147316f-870b-4aea-803e-6e088569c7d1', path: '', url: 'http://13.125.254.96:8080')], contextPath: null, war: '**/*.war'
             }
        }
-  }
-  stages{
-    stage('clone'){
-      steps{
-        git 'https://github.com/trankienhcl/jenkinsfile.git'
+        stage('clone'){
+            steps{
+                git 'https://github.com/trankienhcl/jenkinsfile.git'
       }
     }
   }
