@@ -1,12 +1,13 @@
 pipeline{
-  agent any
-  tools{
+    agent any
+    tools{
         maven 'maven'
-  }
-  stages{
+    }
+    stages{
         stage('clone'){
             steps{
                 git 'https://github.com/trankienhcl/jenkinsfile.git'
+            }
         }
         stage('Build'){
             steps{
@@ -21,10 +22,8 @@ pipeline{
         }
         stage('Deploy to tomcat server'){
             steps{
-                deploy adapters: [tomcat9(credentialsId: '4147316f-870b-4aea-803e-6e088569c7d1', path: '', url: 'http://13.125.254.96:8080')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: '', path: '', url: 'http:// 54.180.8.103 :8080')], contextPath: null, war: '**/*.war'
             }
-       }
-        
+       }   
     }
-  }
 }
