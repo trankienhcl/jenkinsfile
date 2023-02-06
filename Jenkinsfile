@@ -3,12 +3,12 @@ pipeline{
     tools{
         maven 'maven'
     }
-    stages{
+    /*stages{
         stage('clone'){
             steps{
                 git 'https://github.com/trankienhcl/jenkinsfile.git'
             }
-        }
+        }*/
         stage('Build'){
             steps{
                 sh 'mvn clean package'
